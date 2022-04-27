@@ -31,7 +31,7 @@ jobs:
         mapi-token: ${{ secrets.MAPI_TOKEN }}
         api-url: ${{ env.API_URL }}
         api-spec: api/swagger.yaml
-        target: makesoftwaresafe/moby
+        target: mayhemheroes/moby
         duration: 1min
         sarif-report: mapi.sarif
         html-report: mapi.html
