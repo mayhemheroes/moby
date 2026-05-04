@@ -27,6 +27,8 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v4.0.0
     - name: Extract metadata (tags, labels) for Docker
       id: meta
       uses: docker/metadata-action@v6.0.0
@@ -44,4 +46,3 @@ jobs:
       with:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
         args: --image ${{ steps.meta.outputs.tags }} --duration 300
-        sarif_file: sarif
